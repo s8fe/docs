@@ -9,7 +9,7 @@ const config = {
   title: 'Newcoin Protocol Docs',
   tagline: 'Documentation to the Design Aware blockchain Newcoin',
   url: 'https://docs.newcoin.org',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
