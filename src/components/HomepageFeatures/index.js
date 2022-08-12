@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Design Aware',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Newcoin understands the designs and context of all the dApps build on it
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Readymade smart contracts',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        All smart contracts are readymade available and useable in your preferred programming language
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Full Interopability between dApps',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        All dApps use the same data structure, and therefore are fully compatible and share their liquidity with each other. 
       </>
     ),
   },
