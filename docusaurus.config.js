@@ -11,7 +11,7 @@ const config = {
   url: 'https://docs.newcoin.org',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
   // GitHub pages deployment config.
