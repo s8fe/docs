@@ -1,0 +1,8 @@
+{
+  "label": "Newcoin SDK [Typescript]",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "The Newcoin SDK is the first level of abstraction to the Newcoin Blockchain and provides the most direct access to the Smart contracts."
+  }
+}

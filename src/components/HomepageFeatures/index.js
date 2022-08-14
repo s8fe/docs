@@ -4,20 +4,21 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Design Aware',
+    title: 'Community driven Smart Contracts',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Newcoin understands the designs and context of all the dApps build on it
+        Readymade SmartContracts free for developers
       </>
     ),
+    page: 'category/smart-contracts',
   },
   {
-    title: 'Readymade smart contracts',
+    title: 'Easy to start with',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        All smart contracts are readymade available and useable in your preferred programming language
+        SDK'S readymade available in frontend languages like Typescript, Javascript, C# and for Frameworks like React, Unreal, and Unity
       </>
     ),
   },
@@ -32,15 +33,15 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, page}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3><a href={'docs/'+ page}>{title}</a></h3>
+        <p><a href={'docs/'+ page}>{description}</a></p>
       </div>
     </div>
   );
