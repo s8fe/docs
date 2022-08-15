@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'ignore',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/nco-logo-square.ico',
   trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -60,7 +60,7 @@ const config = {
         title: 'Newcoin Docs',
         logo: {
           alt: 'Newcoin Docs Logo',
-          src: 'img/logo.svg',
+          src: 'img/nco-logo.png',
         },
         items: [
           {
@@ -120,7 +120,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} New Foundation, Inc. Built with passion.`,
+        copyright: `Copyright © ${new Date().getFullYear()} New Foundation, Inc. Built with meaning in mind.`,
       },
       prism: {
         theme: lightCodeTheme,

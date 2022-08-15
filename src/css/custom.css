@@ -28,3 +28,12 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+main .container {
+  margin-left: 1rem;
+}
+
+aside .menu {
+  background-color: rgba(245,247,249,1.00);
+}
