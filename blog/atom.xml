@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.newcoin.org/docs/blog"/>
     <subtitle>Newcoin Protocol Docs Blog</subtitle>
-    <icon>https://docs.newcoin.org/docs/img/favicon.ico</icon>
+    <icon>https://docs.newcoin.org/docs/img/nco-logo-square.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
