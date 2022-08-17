@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Newcoin Protocol Docs',
-  tagline: 'Documentation to the Design Aware blockchain Newcoin',
-  url: 'https://docs.newcoin.org',
+  title: 'Newprotocol Docs',
+  tagline: 'Documentation to the Design Aware blockchain Newprotocol',
+  url: 'https://docs.newprotocol.org',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'ignore',
@@ -16,7 +16,7 @@ const config = {
   trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Newcoin-Foundation', // Usually your GitHub org/user name.
+  organizationName: 'Newprotocol-Foundation', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   deploymentBranch: "gh-pages",
   // Even if you don't use internalization, you can use this field to set useful
@@ -49,7 +49,12 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleAnalytics: {
+          trackingID: 'UA-141789564-1',
+          anonymizeIP: true,
+        },
       }),
+      
     ],
   ],
 
@@ -57,9 +62,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Newcoin Docs',
+        title: 'Newprotocol',
         logo: {
-          alt: 'Newcoin Docs Logo',
+          alt: 'Newprotocol Docs Logo',
           src: 'img/nco-logo.png',
         },
         items: [

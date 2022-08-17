@@ -24,4 +24,4 @@ Meanwhile the sum of all DAOs gets involved in broader, infrastructure-level, de
 This governance architecture can be therefore viewed as a DAO of DAOs where a cascade of governance decisions lead to a more scalable and decentralized network.
 
 ### Newmoon Grants
-The [Newmoon Accelerator](https://www.newmoon.ac) provides grants for dApps on the Newcoin Protocol, to support new dApps and developers with reduced fees. Apply Today or join their Discord!
+The [Newmoon Accelerator](https://www.newmoon.ac) provides grants for dApps on the Newprotocol, to support new dApps and developers with reduced fees. Apply Today or join their Discord!

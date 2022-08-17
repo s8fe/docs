@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Newgraph is the main Abstraction Layer and provides a simple access to the Newcoin protocol incl a cloud wallet in multiple languages [Typescript, Javascript, C++, C#, Dart, go, java, php, python, ruby, rust]"
+    "description": "Newgraph is the main Abstraction Layer and provides a simple access to the Newprotocol and includes a cloud wallet in multiple languages [Typescript, Javascript, C++, C#, Dart, go, java, php, python, ruby, rust]"
   }
 }

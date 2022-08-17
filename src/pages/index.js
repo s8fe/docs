@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="docs/intro">
-            open newcoin docs
+            open Newprotocol docs
           </Link>
         </div>
       </div>

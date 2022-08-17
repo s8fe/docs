@@ -1,8 +1,8 @@
 {
-  "label": "Newcoin Guides",
+  "label": "Newprotocol Guides",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Basic guides for an easy start with newcoin"
+    "description": "Basic guides for an easy start with Newprotocol"
   }
 }

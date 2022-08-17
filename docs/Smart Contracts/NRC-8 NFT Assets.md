@@ -8,6 +8,6 @@ Mint backed NFTs holding tokens
 Direct sale/purchase of an NFT between two use
 
 
-### How to create a project based on newcoin?
+### How to create a project based on Newprotocol?
 
 TODO

@@ -6,6 +6,6 @@ the allocation of MainDAO treasury to fund specific proposals
 the deployment of new Standardized smart contracts
 
 
-### How to create a project based on newcoin?
+### How to create a project based on Newprotocol?
 
 TODO
