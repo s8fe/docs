@@ -1,14 +1,14 @@
 ---
-sidebar_position: 15
+sidebar_position: 22
 ---
-MainPool contract swaps $NCO for Governance NCO with a ticker $GNCO, locks $NCO and distributes fees automatically according to the stake fee distribution structure. $GNCO tokens are minted after the lock and are burned when $NCO is unlocked and recovered by the owner. 
+GPool contract swaps $NCO for Governance NCO with a ticker $GNCO, locks $NCO and distributes fees automatically according to the stake fee distribution structure. $GNCO tokens are minted after the lock and are burned when $NCO is unlocked and recovered by the owner. 
 
-# MainPool Actions
-All MainPool actions can be found in the [NewApi.pool-js SDK](https://github.com/Newcoin-Foundation/newcoin.pool-js)
+# GPool Actions
+All GPool actions can be found in the [NewApi.pool-js SDK](https://github.com/Newcoin-Foundation/newcoin.pool-js)
 
 ## Staking
 
-### Stake to the MainPool
+### Stake to the GPool
 ```Javascript
  function stake (from, quantity){
     ...
@@ -22,7 +22,7 @@ Errors:
 
 </details>
 
-### Unstake instantly from the MainPool
+### Unstake instantly from the GPool
 ```Javascript
  function instunstake (from, quantity){
     ...
@@ -37,7 +37,7 @@ Errors:
 </details>
 
 
-### Delayed unstake from the MainPool
+### Delayed unstake from the GPool
 ```Javascript
  function dldunstake (from, quantity){
     ...
@@ -52,7 +52,7 @@ Errors:
 </details>
 
 
-### Redeem a delayed unstake from the MainPool
+### Redeem a delayed unstake from the GPool
 ```Javascript
  function redeem (from, id){
     ...
@@ -67,7 +67,7 @@ Errors:
 </details>
 
 
-## Accounts
+## Account management in the GPool
 
 ### open
 Creates 0 balance account in balances table. 
@@ -78,8 +78,8 @@ Creates 0 balance account in balances table.
 ```
 
 
-### open
-Creates 0 balance account in balances table. 
+### close
+Closes 0 balance account in balances table. 
 ```Javascript
  function close (owner, symbol){
     ...

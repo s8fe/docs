@@ -1,5 +1,5 @@
 ---
-sidebar_position: 19
+sidebar_position: 11
 ---
 The NFT assets contract can be used to 
 create a new collection with custom schema
@@ -8,6 +8,4 @@ Mint backed NFTs holding tokens
 Direct sale/purchase of an NFT between two use
 
 
-### How to create a project based on Newprotocol?
-
-TODO
+### To be released Autumn 2022

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 30
 ---
 newcoin.dao contract is the MainDAO in charge for making infrastructure-level decisions, in particular related to: 
 the allocation of MainDAO treasury to fund specific proposals
