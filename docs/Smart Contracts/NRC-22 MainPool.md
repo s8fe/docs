@@ -46,7 +46,7 @@ nco.instUnstakeMainDAO({
     payer: "satoshi.io" //string;
     payer_prv_key: "<private key>" //string;
 }).then((res) => {
-   console.log("Transaction ID: " + res.TxID_unstakeMainDAO)
+   console.log("Transaction ID: " + res?.TxID_unstakeMainDAO)
 }).catch((error) => console.log("Error: "+error))
 ```
 <details>
@@ -65,16 +65,29 @@ Errors:
 
 
 ### Delayed unstake from the MainPool
-```Javascript
- function dldunstake (from, quantity){
-    ...
- }
+```typescript
+const nco = new NCO_BlockchainAPI(
+    NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
+);
+nco.dldUnstakeMainDAO({
+    amt: "10.0000 NCO" //string;
+    payer: "satoshi.io" //string;
+    payer_prv_key: "<private key>" //string;
+}).then((res) => {
+   console.log("Transaction ID: " + res?.TxID_unstakeMainDAO)
+}).catch((error) => console.log("Error: "+error))
 ```
 <details>
 
-<summary>Requires: Account, Errors: ?</summary>
+<summary>Requires: private key, Errors: auth, negative amt</summary>
+
 Requires: Authorization from Account
-Errors:
+
+Errors: 
+- **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
+- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
+- **"do_stake : amount in should be positive"**: the amount in amt should be positive
+- **"Error: Expected symbol to be A-Z and between one and seven characters"**: the amt needs to be in the Format "#.#### GNCO"
 
 </details>
 
@@ -82,7 +95,7 @@ Errors:
 ### Redeem a delayed unstake from the MainPool
 ```Javascript
  function redeem (from, id){
-    ...
+    TBD
  }
 ```
 <details>
@@ -100,15 +113,16 @@ Errors:
 Creates 0 balance account in balances table. 
 ```Javascript
  function open (owner, symbol, payer){
-    ...
+    TBD
  }
 ```
+*Enables you to pay for opening of the balance account on the MainPool for someone else. If you like to pay for the account, but not for the amount staked.*
 
 
 ### close
 Closes 0 balance account in balances table. 
 ```Javascript
  function close (owner, symbol){
-    ...
+    TBD
  }
 ```
