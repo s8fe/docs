@@ -128,8 +128,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} New Foundation, Inc. Built with meaning in mind.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme:  lightCodeTheme, //        require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['typescript'], //if you want to add languanges, here are the codes: https://prismjs.com/#supported-languages
       },
     }),
 };

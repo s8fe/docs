@@ -1,43 +1,70 @@
 ---
 sidebar_position: 22
 ---
-GPool contract swaps $NCO for Governance NCO with a ticker $GNCO, locks $NCO and distributes fees automatically according to the stake fee distribution structure. $GNCO tokens are minted after the lock and are burned when $NCO is unlocked and recovered by the owner. 
+MainPool contract swaps $NCO for Governance NCO with a ticker $GNCO, locks $NCO and distributes fees automatically according to the stake fee distribution structure. $GNCO tokens are minted after the lock and are burned when $NCO is unlocked and recovered by the owner. 
 
-# GPool Actions
-All GPool actions can be found in the [NewApi.pool-js SDK](https://github.com/Newcoin-Foundation/newcoin.pool-js)
+# MainPool Actions
+All MainPool actions can be found in the [Newcoin-SDK](https://github.com/Newcoin-Foundation/newcoin-sdk)
 
 ## Staking
 
-### Stake to the GPool
-```Javascript
- function stake (from, quantity){
-    ...
- }
+### Stake to the MainPool
+```typescript
+const nco = new NCO_BlockchainAPI(
+    NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
+);
+nco.stakeMainDAO({
+    amt: "10.0000 NCO" //string;
+    payer: "satoshi.io" //string;
+    payer_prv_key: "<private key>" //string;
+}).then((res) => {
+   console.log("Transaction ID: " + res.TxID_stakeMainDAO)
+}).catch((error) => console.log("Error: "+error))
+        
 ```
 <details>
 
-<summary>Requires: Account, Errors: ?</summary>
-Requires: Authorization from Account
-Errors:
+<summary>Requires: private key, Errors: auth, negative amt</summary>
+
+Requires: Authorization from Account 
+
+Errors: 
+- **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
+- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
+- **"do_stake : amount in should be positive"**: the amount in amt should be positive
+- **"Error: Expected symbol to be A-Z and between one and seven characters"**: the amt needs to be in the Format "#.#### NCO"
 
 </details>
 
-### Unstake instantly from the GPool
-```Javascript
- function instunstake (from, quantity){
-    ...
- }
+### Unstake instantly from the MainPool
+```typescript
+const nco = new NCO_BlockchainAPI(
+    NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
+);
+nco.instUnstakeMainDAO({
+    amt: "10.0000 NCO" //string;
+    payer: "satoshi.io" //string;
+    payer_prv_key: "<private key>" //string;
+}).then((res) => {
+   console.log("Transaction ID: " + res.TxID_unstakeMainDAO)
+}).catch((error) => console.log("Error: "+error))
 ```
 <details>
 
-<summary>Requires: Account, Errors: ?</summary>
+<summary>Requires: private key, Errors: auth, negative amt</summary>
+
 Requires: Authorization from Account
-Errors:
+
+Errors: 
+- **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
+- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
+- **"do_stake : amount in should be positive"**: the amount in amt should be positive
+- **"Error: Expected symbol to be A-Z and between one and seven characters"**: the amt needs to be in the Format "#.#### GNCO"
 
 </details>
 
 
-### Delayed unstake from the GPool
+### Delayed unstake from the MainPool
 ```Javascript
  function dldunstake (from, quantity){
     ...
@@ -52,7 +79,7 @@ Errors:
 </details>
 
 
-### Redeem a delayed unstake from the GPool
+### Redeem a delayed unstake from the MainPool
 ```Javascript
  function redeem (from, id){
     ...
@@ -67,7 +94,7 @@ Errors:
 </details>
 
 
-## Account management in the GPool
+## Account management in the MainPool
 
 ### open
 Creates 0 balance account in balances table. 
