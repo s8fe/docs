@@ -1,0 +1,8 @@
+{
+  "label": "Identity",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "description": "Accounts, NFTs, Messages"
+  }
+}

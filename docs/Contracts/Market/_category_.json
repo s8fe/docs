@@ -1,0 +1,8 @@
+{
+  "label": "Market",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "description": "Tokens, Pools, buying, selling"
+  }
+}

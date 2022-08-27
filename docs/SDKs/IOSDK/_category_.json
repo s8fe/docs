@@ -1,8 +1,0 @@
-{
-  "label": "IOSDK [Typescript, Rect]",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "IOSDK is a Frontend Framework in Typescript/React prividing standard components for Blockchain development like a Wallet."
-  }
-}

@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Newprotocol Docs',
-  tagline: 'Documentation to the Design Aware blockchain Newprotocol',
-  url: 'https://docs.newprotocol.org',
+  title: 'Newcoin Docs',
+  tagline: 'Documentation to the Design Aware blockchain Newcoin',
+  url: 'https://docs.new.foundation',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'ignore',
@@ -16,7 +16,7 @@ const config = {
   trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Newprotocol-Foundation', // Usually your GitHub org/user name.
+  organizationName: 'Newcoin-Foundation', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   deploymentBranch: "gh-pages",
   // Even if you don't use internalization, you can use this field to set useful
@@ -38,7 +38,9 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Newcoin-Foundation/docs/tree/main/packages/',
+          routeBasePath: '/',
         },
+        blog:false,
         //blog: {
           //showReadingTime: true,
           // Please change this to your repo.
@@ -62,17 +64,35 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Newprotocol',
+        title: 'Newcoin',
         logo: {
-          alt: 'Newprotocol Docs Logo',
+          alt: 'Newcoin Docs Logo',
           src: 'img/nco-logo.png',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'Overview/Why',
             position: 'left',
-            label: 'Docs',
+            label: 'Overview',
+          },
+          {
+            type: 'doc',
+            docId: 'Guides/Your first project',
+            position: 'left',
+            label: 'Guides',
+          },
+          {
+            type: 'doc',
+            docId: 'Contracts/intro',
+            position: 'left',
+            label: 'Contracts',
+          },
+          {
+            type: 'doc',
+            docId: 'Block production/General',
+            position: 'left',
+            label: 'Block Production',
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           {

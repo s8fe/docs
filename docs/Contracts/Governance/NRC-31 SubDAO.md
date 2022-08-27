@@ -88,7 +88,7 @@ nco.createDaoStakeProposal({
     dao_owner?: "nakamoto.io" //string, optional;
     proposer: "satoshi.io" //string, required;
     proposer_prv_key: "<private key>" //string, required;
-    quantity: "10.0000 vtoken" //string, required - Format "#.#### <token>" Token needs to match the to's token
+    quantity: "10.0000 VTOKEN" //string, required - Format "#.#### <token>" Token needs to match the to's token
     to: "vitalik.io" //string, required
     vote_start: "2022-08-23" //string, required, ISO8601 - "yyyy-MM-dd";
     vote_end: "2022-08-30" //string, required, ISO8601 - "yyyy-MM-dd";
@@ -113,7 +113,7 @@ Errors:
 - **"create_proposal : proposer is not whitelisted"**: the proposer needs to be whitelisted first.
 
 </details>
-
+    
 
 ### Create a DAO Whitelist Proposal
 ```typescript
