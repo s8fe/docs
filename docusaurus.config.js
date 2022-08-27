@@ -106,11 +106,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Popular',
             items: [
               {
-                label: 'Docs',
-                to: 'docs/intro',
+                label: 'Tokenomics',
+                to: 'Overview/Tokenomics/Basics',
               },
             ],
           },
