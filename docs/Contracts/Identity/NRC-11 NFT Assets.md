@@ -54,11 +54,10 @@ Requires: Authorization from Account
 Errors: 
 - **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
 - **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
-- **"Error: assertion failure with message: No collection with this name exists"**: The creator has no collection. See 
+- **"Error: assertion failure with message: No collection with this name exists"**: The creator has no collection. See create collection.  
+
 </details>
 
-
-createCollection
 
 ## Create a Collection
 All NFTs and Assets need to be stored in a collection, that give it its market abilities.  
