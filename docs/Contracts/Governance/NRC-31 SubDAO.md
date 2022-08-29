@@ -375,7 +375,40 @@ Errors:
 
 </details>
 
+### List votes on a proposal
+List all the votes a voter as done.
+You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
 
+```typescript
+    nco.getVotes({
+        voter: "satoshi.io", //can be undefined if you use the dao_id instead.
+        limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
+        lower_bound: undefined, //text, optional, on what index to start. normally used with limit
+        upper_bound: undefined, //text, optional, on what index to start. normally used with limit and reverse=true
+        reverse: false, //if true, returns the last 10 proposals. 
+    }).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("DAO ID: ",res.id)
+            console.log("proposals: ",res.list)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
+
+</details>
+
+<!--
 ### Get DAO proposal by ID
 ```typescript
     const nco = new NCO_BlockchainAPI(
@@ -409,7 +442,7 @@ Errors:
 - **"Error: Cannot read properties of undefiend**: The owner is probably not existing. (We currently look into that case)
 
 </details>
-
+-->
 
 ## SubDAO List Proposals
 
@@ -418,7 +451,7 @@ List any amount of general proposals for a DAO.
 You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
 
 ```typescript
-    nco.listDaoProposals({
+    nco.getDaoProposals({
         dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
         dao_id: undefined,
         limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
@@ -454,7 +487,7 @@ List any amount of whitelist proposals for a DAO.
 You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
 
 ```typescript
-    nco.listDaoWhitelistProposals({
+    nco.getDaoWhitelistProposals({
         dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
         dao_id: undefined,
         limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
@@ -484,3 +517,40 @@ Errors:
 - **"Error: User has no dao"**: The user has no DAO, create a DAO first.
 
 </details>
+
+### List Stake proposals for a DAO
+List any amount of stake proposals for a DAO.  
+You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
+
+```typescript
+    nco.getDaoStakeProposals({
+        dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
+        dao_id: undefined,
+        limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
+        lower_bound: undefined, //text, optional, on what index to start. normally used with limit
+        upper_bound: undefined, //text, optional, on what index to start. normally used with limit and reverse=true
+        reverse: false, //if true, returns the last 10 proposals
+        proposal_author: undefined, //limit to a specific author
+        proposal_id: undefined //limit by proposal id, basically returns only 1. 
+    }).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("DAO ID: ",res.id)
+            console.log("proposals: ",res.list)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
+
+</details>
+
