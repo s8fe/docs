@@ -10,14 +10,15 @@ All SubDAO actions can be found in the [Newcoin-SDK](https://github.com/Newcoin-
 
 
 ### Create a DAO
-**You can only create one DAO per User.**
+**You can only create one DAO per User.**  
+You need to have created a Social Token pool first.
 ```typescript
 const nco = new NCO_BlockchainAPI(
     NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
 );
-nco.createDAO({
-    author: "satoshi.io" //string;
-    author_prv_key: "<private key>" //string;
+nco.createDao({
+    author: "satoshi.io", //string;
+    author_prv_key: "<private key>", //string;
     descr: "My first DAO" //string - cannot be changed afterwards!!!;
 }).then((res) => {
    console.log("Transaction ID: " + res?.TxID_createDao)
@@ -33,8 +34,9 @@ Requires: Authorization from Account
 
 Errors: 
 - **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
-- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
-
+- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match
+- **"Error: create_dao: pool does not exist"**: Create a pool first
+- **"Error: create_dao : dao already exist"**: A user can only have one DAO
 TBD
 
 </details>
@@ -337,5 +339,148 @@ Requires: Authorization from Account
 Errors: 
 - **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
 - **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
+
+</details>
+
+
+## SubDAO Data retrieval
+
+### Get DAO ID by User
+```typescript
+    const nco = new NCO_BlockchainAPI(
+        NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
+    );
+    nco.getDaoIdByOwner(name).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("TX ID: " + res.TxID_createDao )
+            console.log("DAO ID: ",res.dao_id)
+            console.log("full response: ",res)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
+- **"Error: Name not properly normalized**: The owner is probably not existing.
+- **"Error: Cannot read properties of undefiend**: The owner is probably not existing. (We currently look into that case)
+
+</details>
+
+
+### Get DAO proposal by ID
+```typescript
+    const nco = new NCO_BlockchainAPI(
+        NCO_BlockchainAPI.defaults.devnet_urls, NCO_BlockchainAPI.defaults.devnet_services
+    );
+    nco.getDaoProposal({
+        dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
+        dao_id: undefined,
+        proposal_id: "1234" //text, required
+    }).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("TX ID: " + res.TxID_createDao )
+            console.log("DAO ID: ",res.dao_id)
+            console.log("full response: ",res)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
+- **"Error: Name not properly normalized**: The owner is probably not existing.
+- **"Error: Cannot read properties of undefiend**: The owner is probably not existing. (We currently look into that case)
+
+</details>
+
+
+## SubDAO List Proposals
+
+### List general proposals for a DAO
+List any amount of general proposals for a DAO.  
+You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
+
+```typescript
+    nco.listDaoProposals({
+        dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
+        dao_id: undefined,
+        limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
+        lower_bound: undefined, //text, optional, on what index to start. normally used with limit
+        upper_bound: undefined, //text, optional, on what index to start. normally used with limit and reverse=true
+        reverse: false, //if true, returns the last 10 proposals
+        proposal_author: undefined, //limit to a specific author
+        proposal_id: undefined //limit by proposal id, basically returns only 1. 
+    }).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("DAO ID: ",res.id)
+            console.log("proposals: ",res.list)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
+
+</details>
+
+### List Whitelist proposals for a DAO
+List any amount of whitelist proposals for a DAO.  
+You need to limit the call to one DAO, by either provide the dao_owner or the dao_id, everything else is optional.  
+
+```typescript
+    nco.listDaoWhitelistProposals({
+        dao_owner: "satoshi.io", //can be undefined if you use the dao_id instead.
+        dao_id: undefined,
+        limit: 10, //optional, default is 10, how many results to be returned, can be undefined.
+        lower_bound: undefined, //text, optional, on what index to start. normally used with limit
+        upper_bound: undefined, //text, optional, on what index to start. normally used with limit and reverse=true
+        reverse: false, //if true, returns the last 10 proposals
+        proposal_author: undefined, //limit to a specific author
+        proposal_id: undefined //limit by proposal id, basically returns only 1. 
+    }).catch((reason) => {
+        console.log("Blockchain Error: " + reason);
+    }).then((res: any ) => {
+        if(res){
+            console.log("DAO ID: ",res.id)
+            console.log("proposals: ",res.list)
+            console.log(res?.acc_balances?.error?.details)
+        } else {
+            console.log("NO RESULT seems error has occured")
+        }
+    })
+```
+
+<details>
+
+<summary>Requires: - Errors: no dao exist</summary>
+
+Errors: 
+- **"Error: User has no dao"**: The user has no DAO, create a DAO first.
 
 </details>

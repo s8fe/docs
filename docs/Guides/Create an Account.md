@@ -3,6 +3,10 @@ sidebar_position: 2
 ---
 
 
-### Create Accounts Guide
+### Create Full Social Account Guide
 
-TODO
+
+1) Create Account
+4) Stake GNCO
+2) Create pool
+3) Create DAO
