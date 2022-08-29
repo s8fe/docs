@@ -8,15 +8,10 @@ slug: /
 
 ## Basics
 
-Newcoin is a design-aware Layer-1 Blockchain, where all smart contracts are implemented and audited by the community. 
+Newcoin is a design-aware Layer-1 Blockchain, characterized by its community-implemented and community-audited smart contracts. 
 
-Additionally, Newcoin also provides with newgraph a searchable graph database
+Because smart contracts are provided by the blockchain, app developers can get access to them for free and do not need to worry about auditing. 
 
-Due to this, all Blockchain content is shared between all dApps running on Newcoin
-    
-Most Blockchains are turing complete general purpose and therefore design-agnostic. 
+Sharing the same smart contracts across the same blockchain also means that the blockchain is built for interoperability and that all dApps running on the Newcoin Blockchain share the same content, services & users.
 
-Newcoin has standardized smart contracts are either running on the system layer or on a monitored virtual machine, and deployed according to the will of the community through the MainDAO. 
-
-The blockchain is therefore aware of its own capabilities at a system-level, which enables more interoperability through an open standardization process and integrated mechanism design between the consensus algorithm and real world applications.
-
+The Newcoin ecosystem also provides a range of services to help you kick off your idea quickly, such as a searchable graph database called Newgraph, a list of Newcoin compatible API's at Newstack and a Frontend UI SDK at IOSDK.
