@@ -8,7 +8,8 @@ The Universal Name System is a decentralized identity provider providing user-fr
 ## Create New Account
 If you never created an account before, we suggest to start with the [Create an Account](../../Guides/Create%20an%20Account) and the [CPU Ram Bandwidth](../../Guides/Deep%20Dive/CPU-Network-RAM-Bandwidth) Guides.  
 We recommend to have the active account to be a different one than the owner account for additional security. Learn more in our [Active Owner Accounts Guide](../../Guides/Deep%20Dive/Active%20Owner%20Accounts)  
-We recommend to also create the default collection when creating an account, to make sure than NFT's can easily be minted.
+We recommend to also create the default collection when creating an account, to make sure than NFT's can easily be minted.  
+Users on Newcoin have name extensions - the default is .io.  [Name extensions can be bought and traded](../../Guides/Deep%20Dive/UNS%20Name%20Extensions).
 ```typescript
  let keypair = await nco.createKeyPair();
     console.log("Keys owner generated: \n Prv: %s \n Pub: %s\n", keypair.prv_key, keypair.pub_key);
