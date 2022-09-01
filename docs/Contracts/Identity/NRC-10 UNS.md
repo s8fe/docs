@@ -9,7 +9,7 @@ The Universal Name System is a decentralized identity provider providing user-fr
 If you never created an account before, we suggest to start with the [Create an Account](../../Guides/Create%20an%20Account) and the [CPU Ram Bandwidth](../../Guides/Deep%20Dive/CPU-Network-RAM-Bandwidth) Guides.  
 We recommend to have the active account to be a different one than the owner account for additional security. Learn more in our [Active Owner Accounts Guide](../../Guides/Deep%20Dive/Active%20Owner%20Accounts)  
 We recommend to also create the default collection when creating an account, to make sure than NFT's can easily be minted.  
-Users on Newcoin have name extensions - the default is .io.  [Name extensions can be bought and traded](../../Guides/Deep%20Dive/UNS%20Name%20Extensions).
+Users on Newcoin have name extensions - the default is .io.  [Name extensions can be bought and traded](../../Guides/Deep%20Dive/UNS%20Name%20Extensions).  
 ```typescript
  let keypair = await nco.createKeyPair();
     console.log("Keys owner generated: \n Prv: %s \n Pub: %s\n", keypair.prv_key, keypair.pub_key);
@@ -80,38 +80,3 @@ Errors:
 </details>
 
 
-# Accounts Data
-
-## Get Account Balance of a specific token
-TODO  
-This call either requires a contract name OR a Token Name [GNCO,NCO]  
-We recommend to use the higher level Calls: ```txDAOTokenBalance```, ```txGNCOBalance```, ```txNCOBalance``` described in the [NRC-20 Token](../Market/NRC-20%20Token)  
-```typescript
-nco.getAccountBalance({
-        owner: "satoshi.io", 
-        contract: undefined, // if filled out, used to request the token amount.
-        token_name: "GNCO", //can be GNCO, NCO, or null
-        ram_amt : 8196, 
-    }).catch((reason) => {
-        console.log("Blockchain Error: " + reason);
-    }).then((res: any ) => {
-        if(res){
-            console.log("Account Balances: " + res.acc_balances )
-            console.log("full response: ",res)
-        } else {
-            console.log("NO RESULT seems error has occured")
-        }
-    })
-```
-
-<details>
-
-<summary>Requires: private key, Errors: auth</summary>
-
-Requires: Authorization from Account 
-
-Errors: 
-- **"Error: Invalid checksum ..."**: Authentication Error - probably that payer & Payer private key do not match
-- **"Error: transaction declares authority ..."**: Authentication Error - seems the payer and private key do not match.
-
-</details>
