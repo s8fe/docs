@@ -3,7 +3,7 @@ sidebar_position: 10
 ---
 
 
-### Why Newcoin? Why a new Blockchain?
+### A multi-chain automated protocol with expandable consensus mechanics for the new age of creator-centric economies.
 
 Bitcoin is a single-purpose blockchain: it was created as a way for people to send and receive bitcoin cryptocurrency over the internet. While BTC is a great store of value, it is limited as it cannot be used to interact with applications built on blockchain technology.
 
