@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Newcoin-Foundation/docs/tree/main/packages/',
+            'https://github.com/newfound8ion/docs/tree/main/',
           routeBasePath: '/',
         },
         blog:false,
@@ -96,7 +96,7 @@ const config = {
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/Newcoin-Foundation/docs',
+            href: 'https://github.com/newfound8ion/docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -140,7 +140,7 @@ const config = {
               //},
               {
                 label: 'GitHub',
-                href: 'https://github.com/Newcoin-Foundation/docs',
+                href: 'https://github.com/newfound8ion/docs',
               },
             ],
           },
